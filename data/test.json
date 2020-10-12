@@ -1,0 +1,27 @@
+{
+	"0" : { 
+		"title":"Begin", 
+		"body":"The start of the story",
+		"options":[
+			{"id":2,"title":"Next"},
+			{"id":1,"title":"also next"},
+			{"id":3,"title":"goodbye"}]
+	},
+	"2" : { 
+		"title":"Next", 
+		"body":"There is stuff...",
+		"options":[
+			{"id":2,"title":"Next"},
+			{"id":1,"title":"also next"}]
+	},
+	"3" : { 
+		"title":"The end", 
+		"body":"This is the end...",
+		"options":[{"id":4,"title":"this goes nowhere"}]
+	},
+	"1" : { 
+		"title":"The end", 
+		"body":"This is the end...",
+		"options":[{"id":0,"title":"Lets start over"}]
+	}
+}

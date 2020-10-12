@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Story Reader</title>
+    <link rel="stylesheet" href="styles/style.css">
+  </head>
+  <body>
+    <script src='scripts/read.js'></script>
+    <ul>
+      <li>
+        <label class="custom-upload">
+          <input type="file" id="story-file"/>
+          Load File
+        </label>
+      </li>
+      <li><a class="active" href="read.html">Read Story</a></li>
+      <li><a href="edit.html">Edit Story</a></li>
+      <li><div id="cur-file">Current File: None</div></li>
+      <!-- <li><div id="nav-back">Back</div></li> --><!-- TODO Back is annoying.... I have to record history... mmmmmmmm --> 
+      <li><div id="nav-reset">Reset</div></li>
+    </ul>
+    <div id="story-body">
+        <br/>
+        Hi, do you want to read a story?<br/>
+    </div>
+  </body>
+</html>

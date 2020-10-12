@@ -1,0 +1,30 @@
+{
+	"0" : { 
+		"title":"", 
+		"body":"You wake up. You're in your room. Its quiet. Your fan has stopped its normal soothing hum. Its dark too. The streetlight that would normally be glaring in though the crack in your blinds is dark. The branches from the tree outside are tapping against your window irregularly as gusts of wind snatch them about.",
+		"options":[
+			{"id":2,"title":"Look out the window"},
+			{"id":1,"title":"Wait"},
+			{"id":3,"title":"Go back to sleep"}]
+	},
+	"2" : { 
+		"title":"Look out the window", 
+		"body":"You slip out from under your blankets, wincing a little as your feet hit the cold of the floor. You pad across the room in the dark and pull the blinds up. The moon is bright, half full, glinting off the wet leaves as they twist and turn.",
+		"options":[
+			{"id":7,"title":"What was that?"},
+			{"id":8,"title":"Thunder crashes"},
+			{"id":9,"title":"Take a picture"}]
+	},
+	"3" : { 
+		"title":"Go back to sleep", 
+		"body":"You flip on the white noise machine on your phone and roll over. Hopefully No branches will fall on your car. The End",
+		"options":[]
+	},
+	"1" : { 
+		"title":"Wait", 
+		"body":"You snuggle deeper into your bed, pulling the blankets tight around your ears and listen to the wind, waiting for the rain.",
+		"options":[
+			{"id":5,"title":"But something is off"},
+			{"id":6,"title":"You hear it"}]
+	}
+}
