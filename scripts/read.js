@@ -1,5 +1,5 @@
 window.onload = function() {
-    const storyFile = document.getElementById("story-file");
+    const storyFile = document.getElementById("story-file"); //Todo, make this object share between read and edit
     const navReset = document.getElementById("nav-reset");
     const navBack = document.getElementById("nav-back");
     storyBody = document.getElementById("story-body");
