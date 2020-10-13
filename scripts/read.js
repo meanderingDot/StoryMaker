@@ -5,6 +5,7 @@ window.onload = function() {
     storyBody = document.getElementById("story-body");
     fileLabel = document.getElementById("cur-file");
     var json_object={};
+    var history = [];
 
     storyFile.addEventListener("change", handleFiles, false);
     function handleFiles() {
@@ -33,15 +34,12 @@ window.onload = function() {
         resetStory();
     });
 
-    // // If I want to allow stepping back in a story I also need to keep a record of the path used to get to the current node...
-    // // Or only allow one parent per node, but that's no fun cause then I can't have weird branching and loops
-    // navBack.addEventListener("click", function() {
-    //     // alert("back"); //todo
-    //     storyBody.innerHTML += "<p>story</p>";
-    //     window.scrollTo(0,document.body.scrollHeight);
-    // });
+    navBack.addEventListener("click", function() {
+        backStep();
+    });
 
     function nextStoryNode(i) {
+        history.push(i);
         if (typeof json_object[i] !== 'undefined') {
             storyBody.innerHTML += "<p><b>" + json_object[i]["title"] + "</b>";
             storyBody.innerHTML += "<p>" + json_object[i]["body"];
@@ -64,7 +62,17 @@ window.onload = function() {
     }
 
     function resetStory() {
+        history = [];
         storyBody.innerHTML = "";
-        nextStoryNode(0);
+        nextStoryNode("0");
+    }
+
+    function backStep() {
+        history.pop(); // Clear the current node
+        prev = history.pop();
+        if (typeof prev == 'undefined') {
+            prev = "0";
+        }
+        nextStoryNode(prev);
     }
 };
