@@ -1,9 +1,15 @@
 window.onload = function() {
-    const storyFile = document.getElementById("story-file"); //Todo, make this object share between read and edit
+    const storyFile = document.getElementById("story-file");
     const downloadBtn = document.getElementById("download");
     storyBody = document.getElementById("story-body");
     fileLabel = document.getElementById("cur-file"); 
     var json_object={};
+
+    // We previously loaded a story, lets keep it active
+    if (null != localStorage.getItem("story-title") && localStorage.getItem("story-text") != null) {
+        fileLabel.innerHTML = "Current File: " + localStorage.getItem("story-title");
+        json_object = JSON.parse(localStorage.getItem("story-text"));
+    }
 
     storyFile.addEventListener("change", handleFiles, false);
     function handleFiles() {

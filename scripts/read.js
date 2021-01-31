@@ -1,28 +1,52 @@
 window.onload = function() {
-    const storyFile = document.getElementById("story-file"); //Todo, make this object share between read and edit
+    /*** Set up our variables ***/
+    const storyFile = document.getElementById("story-file"); 
     const navReset = document.getElementById("nav-reset");
     const navBack = document.getElementById("nav-back");
     storyBody = document.getElementById("story-body");
     fileLabel = document.getElementById("cur-file");
-    var json_object={};
+    var json_object = {};
     var history = [];
+
+    // If we previously loaded a story, lets keep it active
+    if (null != localStorage.getItem("story-title") && localStorage.getItem("story-text") != null) {
+        fileLabel.innerHTML = "Current File: " + localStorage.getItem("story-title");
+        json_object = JSON.parse(localStorage.getItem("story-text"));
+        resetStory();
+    }
+
+    /*** Set up event listeners ***/
 
     storyFile.addEventListener("change", handleFiles, false);
     function handleFiles() {
         storyRaw = this.files[0];
-        fileLabel.innerHTML = "Current File:" + storyRaw.name;
+        fileLabel.innerHTML = "Current File: " + storyRaw.name;
 
         read = new FileReader();
         read.readAsBinaryString(storyRaw);
         read.onload = function(){
-            //This is sketchy cause its async and there's no gaurentee how long it'll take...
-            var read_text = read.result;
-            json_object=JSON.parse(read_text);
+            // This is sketchy cause its async and there's no gaurentee how long it'll take...
+            try {
+                var read_text = read.result;
+                json_object = JSON.parse(read_text);
+                localStorage.setItem("story-title", storyRaw.name);
+                localStorage.setItem("story-text", read_text);
+            }
+            catch (err) {
+                alert("I couldn't load the story!\n" + err.message);
+                // Trying to load a new file failed so clear the old one
+                storyFile.value = "";
+                fileLabel.value = "";
+                storyBody.value = "";
+                json_object = {};
+                history = [];
+            }
             resetStory();
+
         }
     }
 
-    storyBody.addEventListener("click", function(){
+    storyBody.addEventListener("click", function() {
         const isButton = event.target.nodeName === 'BUTTON';
         if (isButton) {
             hideOldButtons();
@@ -37,6 +61,8 @@ window.onload = function() {
     navBack.addEventListener("click", function() {
         backStep();
     });
+
+    /*** Define the functions we'll use ***/
 
     function nextStoryNode(i) {
         history.push(i);
