@@ -1,0 +1,17 @@
+{
+    "0": {"title": "Once upon a time", "body": "You walk down the sun-dappled path until you see two doors freestanding in the middle of the woods", 
+        "options": [{"id": "1", "title": "Open the first door"},
+            {"id": "2", "title": "Open the second door"},
+            {"id": "3", "title": "Turn around"}]
+        },
+    "1": {"title": "Door 1", "body": "Hesitantly, you open reach out and turn the door handle of the door on the left, it opens, and, well, as you sort of expected all you see is the path stretching on behind it", 
+        "options": [{"id": "4", "title": "Walk through the doorframe"},
+            {"id": "5", "title": "Walk around the doorframe"}]
+        },
+    "2": {"title": "Door 2", "body": "You quickly open the door on the right. It sticks a bit and you have to shove to get it open. When you do you see the path and the trees and the forest but something is, off... You can't put your finger on it. You stare through the door for a long second. Then you realize that it's all reversed, the trees that you see reaching right are reaching left. The little patch of scrubby bramble is on the opposite side of the path. Even the shadows fall the wrong direction", 
+        "options": [{"id": "6", "title": "Walk through the doorway"},
+            {"id": "5", "title": "Walk around the doorframe"}]
+        },
+    "3": {"title": "Turn around", "body": "You turn around and go home.\n \nThe End", 
+        "options": []}
+}

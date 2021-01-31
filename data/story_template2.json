@@ -1,0 +1,15 @@
+{
+    "0": {"title": "This is a different story", "body": "Nothing happens in this story", 
+        "options": [{"id": "1", "title": "Options 1"},
+            {"id": "2", "title": "Option 2"},
+            {"id": "1", "title": "Option 1 again"}]
+        },
+    "1": {"title": "1", "body": "You picked option 1",
+        "options": []
+        },
+    "2": {"title": "2", "body": "You picked option 2",
+            "options": []
+        },
+    "3": {"title": "Orphan", "body": "This option exists but you can't get to it\n \nThe End", 
+        "options": []}
+}
